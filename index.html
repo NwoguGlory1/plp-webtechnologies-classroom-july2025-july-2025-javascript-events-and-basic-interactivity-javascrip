@@ -3,136 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Web3 Developer Portfolio</title>
+  <title>Interactive CSS + JS Demo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header Section -->
   <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">🚀 Web3 Developer Portfolio</div>
-        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
-      </div>
-    </div>
+    <h1>🎨 CSS Animations + JS Functions Demo</h1>
+    <p>Hover, click, and interact with the elements below!</p>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="container">
-      <ul class="nav-tabs">
-        <li><button class="nav-tab active" data-tab="home">Home</button></li>
-        <li><button class="nav-tab" data-tab="interactive">Interactive Demo</button></li>
-        <li><button class="nav-tab" data-tab="contact">Contact Form</button></li>
-      </ul>
+  <!-- Animated Button -->
+  <section>
+    <h2>1. Button Hover Effect</h2>
+    <button class="fancy-btn">Hover Me</button>
+  </section>
+
+  <!-- Box Animation Trigger -->
+  <section>
+    <h2>2. Animate Box with JavaScript</h2>
+    <div class="box" id="box"></div>
+    <button onclick="triggerBoxAnimation('slide')">Slide</button>
+    <button onclick="triggerBoxAnimation('fade')">Fade</button>
+    <button onclick="triggerBoxAnimation('reset')">Reset</button>
+  </section>
+
+  <!-- Card Flip -->
+  <section>
+    <h2>3. Card Flip on Click</h2>
+    <div class="card" id="card">
+      <div class="card-inner">
+        <div class="card-front">Front</div>
+        <div class="card-back">Back</div>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <div class="container">
-    <!-- Home Section -->
-    <section id="home" class="content-section active">
-      <h1>Welcome to My Interactive Portfolio</h1>
-      <p>This demo showcases advanced JavaScript event handling, interactive elements, and form validation techniques perfect for Web3 development.</p>
-      
-      <!-- Dropdown Menu Demo -->
-      <div class="dropdown">
-        <button class="dropdown-toggle" id="dropdownToggle">
-          Choose Web3 Technology <span class="dropdown-arrow">▼</span>
-        </button>
-        <div class="dropdown-menu" id="dropdownMenu">
-          <a href="#" class="dropdown-item" data-tech="ethereum">Ethereum</a>
-          <a href="#" class="dropdown-item" data-tech="solana">Solana</a>
-          <a href="#" class="dropdown-item" data-tech="polygon">Polygon</a>
-          <a href="#" class="dropdown-item" data-tech="avalanche">Avalanche</a>
-        </div>
+  <!-- Modal -->
+  <section>
+    <h2>4. Modal Popup</h2>
+    <button id="openModal">Open Modal</button>
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <p>This is a modal that slides and fades!</p>
       </div>
-      <p id="selectedTech">Selected: None</p>
+    </div>
+  </section>
 
-      <!-- FAQ Section -->
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-question">
-            What is Web3 development?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Web3 development involves building decentralized applications (dApps) that run on blockchain networks, enabling peer-to-peer interactions without intermediaries.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Which blockchain should I start with?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Ethereum is the most popular choice for beginners due to its extensive documentation, large developer community, and robust ecosystem of tools and frameworks.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            What programming languages do I need?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>JavaScript is essential for front-end development, Solidity for smart contracts on Ethereum, and languages like Rust for other blockchains like Solana.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Demo Section -->
-    <section id="interactive" class="content-section">
-      <h1>Interactive Elements Demo</h1>
-      
-      <!-- Counter Game -->
-      <div class="counter-game">
-        <h2>Blockchain Transaction Counter</h2>
-        <div class="counter-display" id="counterDisplay">0</div>
-        <div class="counter-buttons">
-          <button class="btn btn-primary" id="incrementBtn">+1 Transaction</button>
-          <button class="btn btn-secondary" id="decrementBtn">-1 Transaction</button>
-          <button class="btn btn-success" id="multiplyBtn">×2 (Block Reward)</button>
-          <button class="btn btn-danger" id="resetBtn">Reset Chain</button>
-        </div>
-        <p id="transactionHistory"></p>
-      </div>
-
-      <!-- Interactive Elements with Hover Effects -->
-      <div style="margin: 2rem 0;">
-        <h2>Hover Interactive Cards</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0;">
-          <div class="interactive-card" style="padding: 1.5rem; border: 1px solid var(--border-light); border-radius: 10px; text-align: center; transition: all 0.3s ease; cursor: pointer;">
-            <h3>Smart Contracts</h3>
-            <p>Self-executing contracts with terms directly written into code.</p>
-          </div>
-          <div class="interactive-card" style="padding: 1.5rem; border: 1px solid var(--border-light); border-radius: 10px; text-align: center; transition: all 0.3s ease; cursor: pointer;">
-            <h3>DeFi Protocols</h3>
-            <p>Decentralized financial services built on blockchain technology.</p>
-          </div>
-          <div class="interactive-card" style="padding: 1.5rem; border: 1px solid var(--border-light); border-radius: 10px; text-align: center; transition: all 0.3s ease; cursor: pointer;">
-            <h3>NFT Marketplaces</h3>
-            <p>Platforms for trading unique digital assets and collectibles.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="content-section">
-      <h1>Contact Form with Validation</h1>
-      <div class="form-container">
-        <form id="contactForm" novalidate>
-          <!-- form fields here (same as before) -->
-        </form>
-        <div class="form-feedback" id="formFeedback">
-          🎉 Form submitted successfully! Thank you for your message.
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Load external JS -->
   <script src="script.js"></script>
 </body>
 </html>
